@@ -1,0 +1,38 @@
+{
+  "name": "gatsby-theme-demo-netlify-cms",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Tony Alves (https://www.3alves.com/)",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/talves/gatsby-theme-demo-netlify-cms"
+  },
+  "files": [
+    "*.js",
+    "src/**/*",
+    "content/**/*",
+    "static/**/*"
+  ],
+  "keywords": [
+    "gatsby",
+    "gatsby-plugin",
+    "gatsby-theme"
+  ],
+  "dependencies": {
+    "gatsby-plugin-netlify-cms": "4.1.6",
+    "gatsby-source-filesystem": "^2.1.4",
+    "gatsby-source-netlify-cms": "^0.7.3",
+    "mkdirp": "^0.5.1",
+    "netlify-cms-app": "2.9.6",
+    "react-markdown": "4.1.0"
+  },
+  "devDependencies": {
+    "gatsby": "^2.13.11"
+  },
+  "peerDependencies": {
+    "gatsby": "^2.13.11",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6"
+  },
+  "license": "MIT"
+}

@@ -1,0 +1,6 @@
+src/cms/config.json
+yarn.lock
+
+public/
+node_modules/
+.cache/
