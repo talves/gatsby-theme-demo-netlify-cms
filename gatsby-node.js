@@ -82,6 +82,7 @@ exports.onPreBootstrap = (props, options) => {
   // shadow the config file when using this theme as a plugin!
   if (dirName !== dirProgram) {
     const shadowDir = path.join(program.directory, `./src/gatsby-theme-netlify-cms/cms`)
+    if (!fs.existsSync(shadowDir)) mkdirp.sync(shadowDir)
     const shadowFilePath = path.join(shadowDir, `config.json`)
     if (!fs.existsSync(shadowFilePath)) {
       fs.writeFileSync(shadowFilePath, JSON.stringify(newConfig, null, 2), { flag: 'w', encoding: 'utf8' });
