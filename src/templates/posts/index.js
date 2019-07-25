@@ -10,7 +10,10 @@ export const query = graphql`
   query PostsCollection {
     allPosts {
       nodes {
-        slug
+        name
+        internal {
+          type
+        }
         frontmatter {
           title
         }

@@ -26,6 +26,9 @@ exports.createPages = async ({ actions, graphql, reporter }, options) => {
       query {
         ${allName} {
           nodes {
+            internal {
+              type
+            }
             name
             slug
           }
@@ -38,7 +41,7 @@ exports.createPages = async ({ actions, graphql, reporter }, options) => {
     }
 
     result.data[allName].nodes.forEach(node => {
-      const slug = path.join(basePath, node.slug).replace(/\\/g, '/')
+      const slug = path.join(basePath, node.internal.type.toLowerCase(), node.name).replace(/\\/g, '/')
       actions.createPage({
         path: slug,
         component: require.resolve(`./src/templates/${collection.name}.js`),
@@ -77,17 +80,17 @@ exports.onPreBootstrap = (props, options) => {
   if (!fs.existsSync(configFilePath)) {
     fs.writeFileSync(configFilePath, JSON.stringify(newConfig, null, 2), { flag: 'w', encoding: 'utf8' });
   } else {
-    reporter.warn(`[gatsby-theme-netlify-cms] File ${configFilePath} already exists!`);
+    reporter.warn(`[gatsby-theme-demo-netlify-cms] File ${configFilePath} already exists!`);
   }
   // shadow the config file when using this theme as a plugin!
   if (dirName !== dirProgram) {
-    const shadowDir = path.join(program.directory, `./src/gatsby-theme-netlify-cms/cms`)
+    const shadowDir = path.join(program.directory, `./src/gatsby-theme-demo-netlify-cms/cms`)
     if (!fs.existsSync(shadowDir)) mkdirp.sync(shadowDir)
     const shadowFilePath = path.join(shadowDir, `config.json`)
     if (!fs.existsSync(shadowFilePath)) {
       fs.writeFileSync(shadowFilePath, JSON.stringify(newConfig, null, 2), { flag: 'w', encoding: 'utf8' });
     } else {
-      reporter.warn(`[gatsby-theme-netlify-cms] Shadow File ${shadowFilePath} already exists!`);
+      reporter.warn(`[gatsby-theme-demo-netlify-cms] Shadow File ${shadowFilePath} already exists!`);
     }
   }
 }

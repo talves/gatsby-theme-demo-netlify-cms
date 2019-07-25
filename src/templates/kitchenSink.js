@@ -13,7 +13,7 @@ query ($name: String!) {
     frontmatter {
       title
     }
-    body
+    rawBody
     name
   }
 }

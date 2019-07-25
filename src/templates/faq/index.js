@@ -10,7 +10,10 @@ export const query = graphql`
   query FaqCollection {
     allFaq {
       nodes {
-        slug
+        name
+        internal {
+          type
+        }
         frontmatter {
           title
         }

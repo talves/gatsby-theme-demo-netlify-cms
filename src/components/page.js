@@ -9,7 +9,7 @@ const Page = (data) => {
       <h2>
         <Link to="/">Home</Link>
       </h2>
-      <Markdown>{data.body}</Markdown>
+      <Markdown>{data.rawBody}</Markdown>
     </>
   );
 };

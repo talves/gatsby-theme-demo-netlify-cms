@@ -12,7 +12,7 @@ const Collection = ({ data }) => {
           data.map(item => {
             return (
               <li>
-                <Link to={item.slug}>{item.frontmatter.title}</Link>
+                <Link to={`/${item.internal.type.toLowerCase()}/${item.name}`}>{item.frontmatter.title}</Link>
               </li>
             );
           })}

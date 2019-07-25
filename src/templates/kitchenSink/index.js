@@ -10,7 +10,10 @@ export const query = graphql`
   query KitchenSinkCollection {
     allKitchenSink {
       nodes {
-        slug
+        name
+        internal {
+          type
+        }
         frontmatter {
           title
         }

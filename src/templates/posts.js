@@ -9,7 +9,7 @@ import Extra from '../components/extra-json'
 export const query = graphql`
 query ($name: String!) {
   posts(name: {eq: $name}) {
-    body
+    rawBody
     frontmatter {
       date
       image

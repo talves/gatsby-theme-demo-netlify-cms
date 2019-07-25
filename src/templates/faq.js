@@ -11,7 +11,7 @@ export const query = graphql`
     faq(name: { eq: $name }) {
       name
       slug
-      body
+      rawBody
       frontmatter {
         title
       }
